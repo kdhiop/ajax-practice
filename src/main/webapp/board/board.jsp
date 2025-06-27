@@ -21,6 +21,22 @@
 		</div>
 	</div>
 	<script>
+	
+		$(function(){
+			$("#list").click(function(){
+				$.ajax({
+					url: "<%=request.getContextPath() %>/board/list",
+					method: "get", dataType: "html",
+					success: function(data){
+						// console.log(data);
+						$(".outer").html(data);
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+			});
+		});
 		
 	</script>
 
